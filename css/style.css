@@ -1,20 +1,45 @@
 body {
-    background-color: beige;
+    background-color: navajowhite;
 }
 
 header {
     text-align: center;
 }
 
+header a {
+    color: inherit;
+    text-decoration: none;
+}
+
 a.navigation {
-    margin: 15px;
+    margin: 0 12px;
+    font-weight: 600;
+}
+
+header nav a:hover {
+    text-decoration: underline;
 }
 
 main.homepage {
     text-align: center;
 }
 
-main.moviepage {
+main.homepage .review-section {
+    margin: 32px auto;
+    padding: 0 24px;
+}
+
+main.homepage .review-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+main.moviepage,
+main.tvpage,
+main.vgpage {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -22,7 +47,9 @@ main.moviepage {
     padding: 24px;
 }
 
-figure.movie {
+figure.movie,
+figure.tvshow,
+figure.videogame {
     box-sizing: border-box;
     width: 100%;
     max-width: 280px;
@@ -33,29 +60,45 @@ figure.movie {
     background-color: #fffdf6;
 }
 
-figure.movie img {
+main.homepage figure.movie,
+main.homepage figure.tvshow,
+main.homepage figure.videogame {
+    text-align: left;
+}
+
+figure.movie img,
+figure.tvshow img,
+figure.videogame img {
     display: block;
     width: 100%;
     aspect-ratio: 1;
     object-fit: cover;
 }
 
-figure.movie figcaption {
+figure.movie figcaption,
+figure.tvshow figcaption,
+figure.videogame figcaption {
     display: grid;
     gap: 8px;
     padding: 16px;
 }
 
-figure.movie .title {
+figure.movie .title,
+figure.tvshow .title,
+figure.videogame .title {
     font-size: 1.2rem;
     font-weight: bold;
 }
 
-figure.movie .rating {
+figure.movie .rating,
+figure.tvshow .rating,
+figure.videogame .rating {
     font-weight: bold;
 }
 
-figure.movie .review-description {
+figure.movie .review-description,
+figure.tvshow .review-description,
+figure.videogame .review-description {
     line-height: 1.5;
 }
 
@@ -68,4 +111,49 @@ footer {
     max-width: 700px;
     margin: 0 auto;
     padding: 20px;
+}
+
+.myself {
+    width: 20%;
+    border: 5px solid;
+}
+
+@media (max-width: 600px) {
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    a.navigation {
+        margin: 0;
+    }
+
+    .welcometext {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 16px;
+    }
+
+    main.homepage > img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    main.homepage .review-section {
+        padding: 0 12px;
+    }
+
+    main.moviepage,
+    main.tvpage,
+    main.vgpage {
+        padding: 12px;
+    }
+
+    .myself {
+        width: 60%;
+        max-width: 220px;
+    }
 }
